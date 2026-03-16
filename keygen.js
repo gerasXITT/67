@@ -90,7 +90,7 @@ function generateKeys(count, type) {
     let tries = 0;
     while (created.length < count && tries < count * 500) {
         tries++;
-        const key = "SIXseven-" + randomSeg(8) + "-" + randomSeg(8);
+        const key = "GERAS-" + randomSeg(8) + "-" + randomSeg(8);
         if (existing.has(key)) continue;
         existing.add(key);
         const rec = { key, type, createdAt: now.toISOString(), expiresAt,
@@ -192,8 +192,8 @@ function main() {
         ex("--list expired",           "lista apenas expiradas");
         ex("--list revoked",           "lista apenas revogadas");
         ex("--stats",                  "estatisticas gerais");
-        ex("--revoke SIXseven-XXX",       "revoga uma key");
-        ex("--reset-hwid SIXseven-XXX",   "desvincula HWID da key");
+        ex("--revoke GERAS-XXX",       "revoga uma key");
+        ex("--reset-hwid GERAS-XXX",   "desvincula HWID da key");
         ex("--clear",                  "apaga TUDO (cuidado!)");
         console.log();
         return;
